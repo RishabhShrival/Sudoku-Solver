@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sudoku Solution</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Solved Sudoku</h1>
+      <table class="sudoku-table">
+        {% for i in range(9) %}
+        <tr>
+          {% for j in range(9) %}
+          <td>{{ board[i][j] }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </table>
+      <a href="/" class="btn">Upload another image</a>
+    </div>
+  </body>
+</html>

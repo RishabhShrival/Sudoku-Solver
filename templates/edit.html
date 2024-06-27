@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit Sudoku</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Edit Extracted Sudoku</h1>
+      {% if error %}
+      <p class="error">{{ error }}</p>
+      {% endif %}
+      <form action="/solve" method="post">
+        <table class="sudoku-table">
+          {% for i in range(9) %}
+          <tr>
+            {% for j in range(9) %}
+            <td>
+              <input
+                type="number"
+                name="cell-{{ i }}-{{ j }}"
+                min="0"
+                max="9"
+                value="{{ board[i][j] }}"
+                required
+              />
+            </td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </table>
+        <button type="submit">Solve</button>
+      </form>
+    </div>
+  </body>
+</html>
